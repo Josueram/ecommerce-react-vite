@@ -1,12 +1,15 @@
 import { useRoutes, BrowserRouter } from "react-router-dom";
 
-// Componentes
+// Pages
 import Home from "../Home";
 import MyAccount from "../MyAccount";
 import MyOrder from "../MyOrder";
 import MyOrders from "../MyOrders";
 import NotFound from "../NotFound";
 import SignIn from "../SignIn";
+
+// Components
+import Navbar from "../../Components/Navbar";
 
 // Estilos
 import "./App.css";
@@ -29,6 +32,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <Navbar />
     </BrowserRouter>
   );
 };
