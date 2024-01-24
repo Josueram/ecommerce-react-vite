@@ -1,9 +1,12 @@
 import React from "react";
 
+// Components
+import Card from "../../Components/Card";
+
 function Home() {
   return (
     <div>
-      <p>Home</p>
+      <Card />
     </div>
   );
 }
