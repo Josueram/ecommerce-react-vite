@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
+// Context
+import { Context } from "../../Context";
+
+// Icons
+import { ShoppingBagIcon } from "@heroicons/react/24/solid";
+
 const Navbar = () => {
+  const { count } = useContext(Context);
   const activeStyle = "underline underline-offset-8";
 
   return (
-    <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-base">
+    <nav className="flex justify-between items-center fixed z-10 top-0 bg-white border border-b-1 w-full py-5 px-8 text-base">
       <ul className="flex items-center gap-5">
         {/* Left menu */}
         <li className="font-semibold text-xl">
@@ -79,7 +86,9 @@ const Navbar = () => {
             Sign In
           </NavLink>
         </li>
-        <li>🛒 0</li>
+        <li className="flex items-center">
+          <ShoppingBagIcon className="w-6 h-6 me-2" /> {count}
+        </li>
       </ul>
     </nav>
   );
